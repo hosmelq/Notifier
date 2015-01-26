@@ -1,0 +1,35 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.BrowseNotificationsActivity">
+
+    <FrameLayout
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Notifications fragment showing the notification list -->
+        <fragment
+            android:name="com.getnerdify.android.notifier.ui.NotificationsFragment"
+            android:id="@+id/notifications_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_notifications" />
+
+        <LinearLayout
+            android:clickable="true"
+            android:id="@+id/headerbar"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            style="@style/HeaderBar" >
+
+            <include layout="@layout/toolbar_actionbar" />
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

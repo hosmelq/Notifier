@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/content_padding_normal"
+    android:paddingRight="@dimen/content_padding_normal"
+    tools:context=".ui.LoginActivity" >
+
+    <ImageView
+        android:src="@drawable/notifier_logo"
+        style="@style/Auth.Title" />
+
+    <LinearLayout
+        android:background="@drawable/login_fields_container"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical" >
+
+        <EditText
+            android:hint="@string/login_username"
+            android:id="@+id/username_text"
+            android:inputType="textPersonName"
+            style="@style/Auth.EditText" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:background="@null"
+            android:hint="@string/login_password"
+            android:id="@+id/password_text"
+            android:inputType="textPassword"
+            style="@style/Auth.EditText" />
+
+        <FrameLayout
+            style="@style/Auth.WrapperButton" >
+
+            <Button
+                android:id="@+id/login"
+                android:text="@string/login_login"
+                style="@style/Auth.Button" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

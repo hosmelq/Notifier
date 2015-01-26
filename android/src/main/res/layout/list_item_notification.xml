@@ -1,0 +1,65 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:notifier="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/notification_target"
+    android:layout_height="120dp"
+    android:layout_width="match_parent"
+    android:paddingLeft="12dp"
+    android:paddingRight="12dp" >
+
+    <!--android:foreground="?android:selectableItemBackground"-->
+    <android.support.v7.widget.CardView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        notifier:cardBackgroundColor="#fff"
+        notifier:cardCornerRadius="3dp"
+        notifier:cardElevation="1dp"
+        notifier:cardMaxElevation="1dp"
+        notifier:cardPreventCornerOverlap="false"
+        notifier:cardUseCompatPadding="true"
+        notifier:contentPadding="@dimen/explore_grid_padding" >
+
+        <!-- Notification image -->
+        <!--<com.getnerdify.android.notifier.ui.widget.BezelImageView-->
+        <!--<ImageView-->
+            <!--android:id="@+id/notification_photo_colored"-->
+            <!--android:layout_gravity="start|center"-->
+            <!--android:layout_height="@dimen/notification_image_size"-->
+            <!--android:layout_width="@dimen/notification_image_size"-->
+            <!--android:scaleType="centerCrop" />-->
+    <!--android:src="@drawable/person_image_empty"-->
+        <!--app:maskDrawable="@drawable/circle_mask"-->
+
+        <!-- info box -->
+        <LinearLayout
+            android:id="@+id/info_box"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:orientation="vertical" >
+            <!--android:paddingLeft="@dimen/notification_info_padding"-->
+            <!--android:paddingStart="@dimen/notification_info_padding"-->
+
+            <!-- Notification title -->
+            <TextView
+                android:id="@+id/notification_title"
+                android:textSize="@dimen/text_size_large"
+                style="@style/NotificationItem.Text" />
+
+            <!-- Notification desc -->
+            <TextView
+                android:id="@+id/notification_description"
+                android:textSize="32sp"
+                style="@style/NotificationItem.Text" />
+
+            <!-- Notification date -->
+            <TextView
+                android:id="@+id/notification_date"
+                android:textSize="@dimen/text_size_medium"
+                style="@style/NotificationItem.Text" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>

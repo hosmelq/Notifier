@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme" parent="FrameworkRoot.Theme" />
+
+    <style name="Theme.Notifier" parent="Theme.Notifier.Base">
+        <item name="photoItemForeground">@drawable/photo_item_foreground</item>
+        <item name="photoItemForegroundBorderless">@drawable/photo_item_foreground_borderless</item>
+
+        <item name="android:navigationBarColor">#000</item>
+        <item name="android:statusBarColor">?colorPrimaryDark</item>
+    </style>
+
+</resources>

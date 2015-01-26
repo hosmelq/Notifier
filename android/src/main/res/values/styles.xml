@@ -1,0 +1,126 @@
+<resources>
+    <!-- Root styles that vary by API level -->
+    <!-- Disable RTL support on older devices -->
+    <!-- Prevents crash on certain devices to namespace conflict -->
+    <style name="FrameworkRoot.Theme" parent="Theme.AppCompat.Light" />
+    <style name="FrameworkRoot.Widget" parent="Theme.AppCompat" />
+
+    <style name="Theme" parent="FrameworkRoot.Theme" />
+
+    <style name="Theme.Notifier.Base" parent="Theme">
+        <item name="actionBarIconColor">#fff</item>
+        <item name="actionBarInsetStart">@dimen/keyline_2</item>
+        <item name="homeAsUpIndicator">@drawable/ic_up</item>
+        <item name="photoItemForeground">?android:selectableItemBackground</item>
+        <item name="photoItemForegroundBorderless">?android:selectableItemBackground</item>
+
+        <item name="colorAccent">@color/theme_accent_2</item>
+        <item name="colorPrimary">@color/theme_primary</item>
+        <item name="colorPrimaryDark">@color/theme_primary_dark</item>
+
+        <item name="android:textColorLink">@color/theme_accent_2</item>
+
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_up</item>
+    </style>
+
+    <style name="Theme.Notifier" parent="Theme.Notifier.Base" />
+
+    <style name="ActionBarThemeOverlay" parent="">
+        <item name="android:textColorPrimary">#fff</item>
+        <item name="colorControlNormal">?actionBarIconColor</item>
+        <item name="colorControlHighlight">#3fff</item>
+    </style>
+
+    <style name="ActionBarPopupThemeOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ActionBar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="HeaderBar">
+        <item name="android:background">?colorPrimary</item>
+        <item name="android:elevation">@dimen/headerbar_elevation</item>
+    </style>
+
+    <style name="EmptyText" parent="">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingTop">?actionBarSize</item>
+        <item name="android:textColor">@color/body_text_2</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <!-- Activities themes -->
+
+    <!-- Auth, Login stuff -->
+    <style name="Theme.Notifier.Auth" parent="Theme.Notifier">
+        <item name="android:windowBackground">@color/theme_primary_dark</item>
+    </style>
+
+    <style name="Theme.Notifier.Login" parent="Theme.Notifier.Auth">
+        <item name="android:windowAnimationStyle">@null</item>
+    </style>
+
+    <style name="Auth.Title" parent="">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_marginBottom">32dp</item>
+        <item name="android:layout_marginTop">44dp</item>
+        <item name="android:layout_width">200dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="Auth.EditText" parent="">
+        <item name="android:background">@drawable/bottomline</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <style name="Auth.WrapperButton" parent="">
+        <item name="android:background">@drawable/login_button</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="Auth.Button" parent="">
+        <item name="android:background">?photoItemForeground</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">#250054</item>
+    </style>
+
+    <!-- Notifications list -->
+    <style name="Theme.Notifier.Notifications" parent="Theme.Notifier">
+        <item name="android:windowBackground">@color/gray_background</item>
+    </style>
+
+    <style name="NotificationItem.Text" parent="">
+        <item name="android:ellipsize">end</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:lineSpacingMultiplier">1.1</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <!-- Code -->
+    <style name="Theme.Notifier.Code" parent="Theme.Notifier">
+        <item name="android:windowBackground">@color/theme_primary_dark</item>
+    </style>
+
+    <style name="Code.Text" parent="">
+        <item name="android:fontFamily">sans-serif-thin</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+</resources>

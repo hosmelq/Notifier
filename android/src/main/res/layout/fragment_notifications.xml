@@ -1,0 +1,19 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:notifier="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.NotificationsFragment" >
+
+    <com.getnerdify.android.notifier.ui.widget.CollectionView
+        android:clipToPadding="false"
+        android:id="@+id/notifications_collection_view"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        notifier:internalPadding="@dimen/element_spacing_normal" />
+
+    <TextView
+        android:id="@+id/empty_text"
+        style="@style/EmptyText" />
+
+</FrameLayout>

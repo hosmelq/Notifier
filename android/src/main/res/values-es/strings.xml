@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Name of the application, shown in the application's title bar. -->
+    <string name="app_name">Notifier</string>
+
+    <!-- Label on a button that the user clicks to accept a license agreement. -->
+    <string name="accept">Aceptar</string>
+
+    <!-- A single button shown on informative popups, like EULA, open source licenses and About -->
+    <string name="ok">Aceptar</string>
+
+    <!-- Label on a button that the user clicks to decline something (for example, a license agreement). -->
+    <string name="decline">Rechazar</string>
+
+    <!--
+    Label on a button that allows the user to cancel an operation before it starts. For
+    example, this may be a button on a dialog that says "This will delete your data."
+    -->
+    <string name="cancel">Cancelar</string>
+
+    <!-- Label for BrowseEvents activity -->
+    <string name="title_explore">Notificaciones</string>
+
+    <!-- Text in the menu for logout -->
+    <string name="action_logout">Cerrar sesión</string>
+
+    <!-- Hint for a username field -->
+    <string name="login_username">Usuario</string>
+
+    <!-- Hint for a password field -->
+    <string name="login_password">Contraseña</string>
+
+    <!-- Hint for generic login text -->
+    <string name="login_login">Iniciar sesión</string>
+
+    <!-- Message presented while logging -->
+    <string name="login_logging">Iniciando sesión</string>
+
+    <!-- Message shown in dialog when user could not be logged in -->
+    <string name="login_failed_text">Revisar campos</string>
+
+    <!-- Label for Code activity -->
+    <string name="title_code">Código</string>
+
+    <!-- Label shown de company name with code string -->
+    <string name="company_code">%1$s código:</string>
+
+</resources>
