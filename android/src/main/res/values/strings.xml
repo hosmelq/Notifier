@@ -43,7 +43,10 @@
     <!-- Label for Code activity -->
     <string name="title_code">Code</string>
 
-    <!-- Label shown de company name with code string -->
-    <string name="company_code">%1$s code:</string>
+    <!-- Label shown the company name with code string -->
+    <string name="company_code">%1$s token is:</string>
+
+    <!-- Label shown in the notification for code -->
+    <string name="notification_code">Your token is: %1$s</string>
 
 </resources>

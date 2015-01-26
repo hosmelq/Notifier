@@ -43,7 +43,10 @@
     <!-- Label for Code activity -->
     <string name="title_code">Código</string>
 
-    <!-- Label shown de company name with code string -->
+    <!-- Label shown the company name with code string -->
     <string name="company_code">%1$s código:</string>
+
+    <!-- Label shown in the notification for code -->
+    <string name="notification_code">Tu código es: %1$s</string>
 
 </resources>
