@@ -55,7 +55,7 @@ public class LoginActivity extends Activity {
     }
 
     private void proccessLogin() {
-        String username = mUsernameText.getText().toString().trim();
+        String username = mUsernameText.getText().toString().trim().toLowerCase();
         String password = mPasswordText.getText().toString().trim();
 
         if (username.isEmpty() || password.isEmpty()) {
