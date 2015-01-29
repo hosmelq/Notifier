@@ -84,13 +84,6 @@ public class NotificationsFragment extends Fragment implements CollectionViewCal
     }
 
     @Override
-    public void onResume() {
-        super.onResume();
-
-        updateCollectionView();
-    }
-
-    @Override
     public View newCollectionHeaderView(Context context, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
