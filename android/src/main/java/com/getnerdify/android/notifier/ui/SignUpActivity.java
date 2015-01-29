@@ -23,80 +23,86 @@ import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;
 
-public class LoginActivity extends Activity {
+public class SignUpActivity extends Activity {
 
-    public static final String TAG = LoginActivity.class.getSimpleName();
-    protected TextView mUsernameText;
+    public static final String TAG = SignUpActivity.class.getSimpleName();
+    protected TextView mNameText;
+    protected TextView mCellphoneText;
+    protected TextView mEmailText;
     protected TextView mPasswordText;
-    protected Button mLoginButton;
+    protected Button mSignupButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_sign_up);
 
-        mUsernameText = (TextView) findViewById(R.id.email_text);
+        mNameText = (TextView) findViewById(R.id.name_text);
+        mCellphoneText = (TextView) findViewById(R.id.username_cellphone);
+        mEmailText = (TextView) findViewById(R.id.email_text);
         mPasswordText = (TextView) findViewById(R.id.password_text);
-        mLoginButton = (Button) findViewById(R.id.login);
+        mSignupButton = (Button) findViewById(R.id.signup);
 
         mPasswordText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if ((event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) || actionId == EditorInfo.IME_ACTION_DONE) {
-                    proccessLogin();
+                    proccessSignUp();
                 }
 
                 return false;
             }
         });
 
-        mLoginButton.setOnClickListener(new View.OnClickListener() {
+        mSignupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                proccessLogin();
+                proccessSignUp();
             }
         });
     }
 
-    private void proccessLogin() {
-        String username = mUsernameText.getText().toString().trim().toLowerCase();
+    private void proccessSignUp() {
+        String name = mNameText.getText().toString().trim();
+        String cellphone = mCellphoneText.getText().toString().trim();
+        String email = mEmailText.getText().toString().trim();
         String password = mPasswordText.getText().toString().trim();
 
-        if (username.isEmpty() || password.isEmpty()) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-            builder.setMessage(getString(R.string.login_failed_text))
+        if (name.isEmpty() || cellphone.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
+            builder.setMessage(getString(R.string.signup_failed_text))
                 .setTitle("Opss!")
                 .setPositiveButton(android.R.string.ok, null);
             AlertDialog dialog = builder.create();
             dialog.show();
         } else {
-            // Login
-            final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this);
-            progressDialog.setMessage(getString(R.string.login_logging));
+            final ProgressDialog progressDialog = new ProgressDialog(SignUpActivity.this);
+            progressDialog.setMessage(getString(R.string.signup_signingup));
             progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             progressDialog.setCancelable(false);
             progressDialog.show();
 
-            RetrofitUser user = new RetrofitUser(username, password);
+            // create the new user
+            final RetrofitUser user = new RetrofitUser(name, cellphone, email, password);
             NotifierService service = new NotifierService();
 
-            service.login(user, new Callback<RetrofitUser>() {
+            service.signup(user, new Callback<RetrofitUser>() {
                 @Override
-                public void success(RetrofitUser user, Response response) {
+                public void success(RetrofitUser retrofitUser, Response response) {
                     progressDialog.dismiss();
 
-                    if (user.getCodigo() == 0) {
+                    if (retrofitUser.getCodigo() == 0) {
                         NotifierApplication.updateParseInstallation(user);
-                        PrefUtils.markLoginDone(LoginActivity.this, user);
+                        PrefUtils.markLoginDone(SignUpActivity.this, user);
 
-                        Intent intent = new Intent(LoginActivity.this, BrowseNotificationsActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        intent.addFlags(IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
+                        Intent intent = new Intent(SignUpActivity.this, BrowseNotificationsActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        intent.setFlags(IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     } else {
-                        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                        builder.setMessage(user.getDescripcion())
+                        AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
+                        builder.setMessage(retrofitUser.getDescripcion())
                             .setTitle("Opss!")
                             .setPositiveButton(android.R.string.ok, null);
                         AlertDialog dialog = builder.create();

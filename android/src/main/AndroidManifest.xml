@@ -22,12 +22,24 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Notifier" >
         <activity
+            android:name=".ui.WelcomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Notifier.Welcome">
+        </activity>
+        <activity
+            android:name=".ui.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Notifier.SignUp" >
+        </activity>
+        <activity
             android:name=".ui.LoginActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Notifier.Login" >
         </activity>
         <activity
             android:label="@string/app_name"
             android:name=".ui.BrowseNotificationsActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Notifier.Notifications" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,6 +50,7 @@
         <activity
             android:label="@string/title_code"
             android:name=".ui.CodeActivity"
+            android:screenOrientation="portrait"
             android:parentActivityName=".ui.BrowseNotificationsActivity"
             android:theme="@style/Theme.Notifier.Code" >
             <meta-data

@@ -19,14 +19,15 @@
     -->
     <string name="cancel">Cancel</string>
 
-    <!-- Label for BrowseNotifications activity -->
-    <string name="title_explore">Notifications</string>
-
     <!-- Text in the menu for logout -->
     <string name="action_logout">Log out</string>
 
+    <!-- Welcome text indicating for login or sign up-->
+    <string name="welcome_button_signup">Sign Up</string>
+    <string name="welcome_button_login">Log In</string>
+
     <!-- Hint for a username field -->
-    <string name="login_username">Username</string>
+    <string name="login_email">Email</string>
 
     <!-- Hint for a password field -->
     <string name="login_password">Password</string>
@@ -39,6 +40,30 @@
 
     <!-- Message shown in dialog when user could not be logged in -->
     <string name="login_failed_text">Check fields</string>
+
+    <!-- Hint for a full name field -->
+    <string name="signup_name">Full name</string>
+
+    <!-- Hint for a cellphone field -->
+    <string name="signup_cellphone">Cellphone</string>
+
+    <!-- Hint for a email field -->
+    <string name="signup_email">Email</string>
+
+    <!-- Hint for a password field -->
+    <string name="signup_password">Password</string>
+
+    <!-- Hint for generic sign up text -->
+    <string name="signup_signup">Sign Up</string>
+
+    <!-- Message presented while signingup -->
+    <string name="signup_signingup">Signing Up</string>
+
+    <!-- Message shown in dialog when user could not be logged in -->
+    <string name="signup_failed_text">Check fields</string>
+
+    <!-- Label for BrowseNotifications activity -->
+    <string name="title_explore">Notifications</string>
 
     <!-- Label for Code activity -->
     <string name="title_code">Code</string>

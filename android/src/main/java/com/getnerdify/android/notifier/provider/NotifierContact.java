@@ -2,6 +2,11 @@ package com.getnerdify.android.notifier.provider;
 
 public class NotifierContact {
 
+    public interface InstallationsColumns {
+        String INSTALLATION_USER_EMAIL = "email";
+        String INSTALLATION_USER_CELLPHONE = "celular";
+    }
+
     public interface NotificationsColumns {
         String NOTIFICATION__CLASS = "Notification";
         String NOTIFICATION_ID = "objectId";

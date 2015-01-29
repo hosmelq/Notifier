@@ -8,7 +8,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.getnerdify.android.notifier.R;
-import com.parse.ParseUser;
+import com.getnerdify.android.notifier.util.PrefUtils;
 
 public class BaseActivity extends ActionBarActivity {
 
@@ -21,8 +21,8 @@ public class BaseActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (ParseUser.getCurrentUser() == null) {
-            navigateToLogin();
+        if ( ! PrefUtils.isLoginDone(this)) {
+            navigateToWelcome();
         }
 
         ActionBar ab = getSupportActionBar();
@@ -50,8 +50,8 @@ public class BaseActivity extends ActionBarActivity {
         return mActionBarToolbar;
     }
 
-    protected void navigateToLogin() {
-        Intent intent = new Intent(this, LoginActivity.class);
+    protected void navigateToWelcome() {
+        Intent intent = new Intent(this, WelcomeActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         intent.addFlags(IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

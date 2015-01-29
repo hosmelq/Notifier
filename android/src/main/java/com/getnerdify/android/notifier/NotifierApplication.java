@@ -2,11 +2,10 @@ package com.getnerdify.android.notifier;
 
 import android.app.Application;
 
-import com.getnerdify.android.notifier.ui.CodeActivity;
+import com.getnerdify.android.notifier.model.RetrofitUser;
+import com.getnerdify.android.notifier.provider.NotifierContact.InstallationsColumns;
 import com.parse.Parse;
 import com.parse.ParseInstallation;
-import com.parse.ParseUser;
-import com.parse.PushService;
 
 public class NotifierApplication extends Application {
 
@@ -22,10 +21,10 @@ public class NotifierApplication extends Application {
         ParseInstallation.getCurrentInstallation().saveInBackground();
     }
 
-    public static void updateParseInstallation(ParseUser user) {
+    public static void updateParseInstallation(RetrofitUser user) {
         ParseInstallation installation = ParseInstallation.getCurrentInstallation();
-        installation.put("userId", user.getObjectId());
-        installation.put("userEmail", user.getEmail());
+        installation.put(InstallationsColumns.INSTALLATION_USER_EMAIL, user.getEmail());
+        installation.put(InstallationsColumns.INSTALLATION_USER_CELLPHONE, user.getCelular());
         installation.saveInBackground();
     }
 

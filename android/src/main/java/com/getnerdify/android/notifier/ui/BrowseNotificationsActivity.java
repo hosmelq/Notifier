@@ -7,8 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.getnerdify.android.notifier.R;
+import com.getnerdify.android.notifier.util.PrefUtils;
 import com.getnerdify.android.notifier.util.UIUtils;
-import com.parse.ParseUser;
 
 public class BrowseNotificationsActivity extends BaseActivity
     implements NotificationsFragment.Callbacks {
@@ -50,8 +50,8 @@ public class BrowseNotificationsActivity extends BaseActivity
         int id = item.getItemId();
 
         if (id == R.id.action_logout) {
-            ParseUser.logOut();
-            navigateToLogin();
+            PrefUtils.markLoginOutDone(this);
+            navigateToWelcome();
         }
 
         return super.onOptionsItemSelected(item);

@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:paddingLeft="@dimen/content_padding_normal"
     android:paddingRight="@dimen/content_padding_normal"
-    tools:context=".ui.LoginActivity" >
+    tools:context=".ui.SignUpActivity" >
 
     <ImageView
         android:src="@drawable/notifier_logo"
@@ -18,17 +18,29 @@
         android:orientation="vertical" >
 
         <EditText
-            android:hint="@string/login_email"
-            android:id="@+id/email_text"
-            android:inputType="textEmailAddress"
+            android:hint="@string/signup_name"
+            android:id="@+id/name_text"
+            android:inputType="textPersonName"
             style="@style/Auth.EditText" >
 
             <requestFocus />
         </EditText>
 
         <EditText
+            android:hint="@string/signup_cellphone"
+            android:id="@+id/username_cellphone"
+            android:inputType="phone"
+            style="@style/Auth.EditText" />
+
+        <EditText
+            android:hint="@string/signup_email"
+            android:id="@+id/email_text"
+            android:inputType="textEmailAddress"
+            style="@style/Auth.EditText" />
+
+        <EditText
             android:background="@null"
-            android:hint="@string/login_password"
+            android:hint="@string/signup_password"
             android:id="@+id/password_text"
             android:inputType="textPassword"
             style="@style/Auth.EditText" />
@@ -37,8 +49,8 @@
             style="@style/Auth.WrapperButton" >
 
             <Button
-                android:id="@+id/login"
-                android:text="@string/login_login"
+                android:id="@+id/signup"
+                android:text="@string/signup_signup"
                 style="@style/Auth.Button" />
 
         </FrameLayout>

@@ -19,14 +19,15 @@
     -->
     <string name="cancel">Cancelar</string>
 
-    <!-- Label for BrowseEvents activity -->
-    <string name="title_explore">Notificaciones</string>
-
     <!-- Text in the menu for logout -->
     <string name="action_logout">Cerrar sesión</string>
 
+    <!-- Welcome text indicating for login or sign up-->
+    <string name="welcome_button_signup">Regístrate</string>
+    <string name="welcome_button_login">Inicia Sesión</string>
+
     <!-- Hint for a username field -->
-    <string name="login_username">Usuario</string>
+    <string name="login_email">Correo Electrónico</string>
 
     <!-- Hint for a password field -->
     <string name="login_password">Contraseña</string>
@@ -39,6 +40,30 @@
 
     <!-- Message shown in dialog when user could not be logged in -->
     <string name="login_failed_text">Revisar campos</string>
+
+    <!-- Hint for a full name field -->
+    <string name="signup_name">Nombre Completo</string>
+
+    <!-- Hint for a cellphone field -->
+    <string name="signup_cellphone">Celular</string>
+
+    <!-- Hint for a email field -->
+    <string name="signup_email">Correo Electrónico</string>
+
+    <!-- Hint for a password field -->
+    <string name="signup_password">Contraseña</string>
+
+    <!-- Hint for generic sign up text -->
+    <string name="signup_signup">Regístrate</string>
+
+    <!-- Message presented while signingup -->
+    <string name="signup_signingup">Creando cuenta</string>
+
+    <!-- Message shown in dialog when user could not be logged in -->
+    <string name="signup_failed_text">Revisar campos</string>
+
+    <!-- Label for BrowseEvents activity -->
+    <string name="title_explore">Notificaciones</string>
 
     <!-- Label for Code activity -->
     <string name="title_code">Código</string>
