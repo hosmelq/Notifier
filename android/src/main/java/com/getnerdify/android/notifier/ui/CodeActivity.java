@@ -3,7 +3,7 @@ package com.getnerdify.android.notifier.ui;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import android.widget.TextView;
 
 import com.getnerdify.android.notifier.R;
 
@@ -29,6 +29,26 @@ public class CodeActivity extends BaseActivity {
         ActionBar ab = getSupportActionBar();
         if (ab != null) {
             ab.setDisplayHomeAsUpEnabled(true);
+        }
+
+        TextView labelView = (TextView) findViewById(R.id.label);
+        TextView codeView = (TextView) findViewById(R.id.code);
+
+        Bundle extras = getIntent().getExtras();
+
+        if (extras != null) {
+            if (extras.containsKey("com.parse.Data")) {
+                try {
+                    JSONObject pushData = new JSONObject(extras.getString("com.parse.Data"));
+                    String code = pushData.getString("code");
+                    String company = pushData.getString("company");
+
+                    labelView.setText(String.format(getString(R.string.company_code), company));
+                    codeView.setText(code);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
