@@ -114,8 +114,8 @@ public class CollectionView extends ListView {
     }
 
     private void doFadeInAnimation() {
-//        setAlpha(0);
-//        animate().setDuration(250).alpha(1);
+        setAlpha(0);
+        animate().setDuration(250).alpha(1);
     }
 
     private View getItemView(RowComputeResult rowInfo, int column, View view, ViewGroup parent) {
@@ -296,7 +296,7 @@ public class CollectionView extends ListView {
     public void updateInventory(final Inventory inv, boolean animate) {
         if (animate) {
             Log.d(TAG, "CollectionView updating inventory with animation.");
-//            setAlpha(0);
+            setAlpha(0);
             updateInventoryImmediate(inv, animate);
             doFadeInAnimation();
         } else {

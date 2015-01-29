@@ -1,6 +1,9 @@
 package com.getnerdify.android.notifier.sync;
 
+import com.getnerdify.android.notifier.model.RetrofitNotification;
 import com.getnerdify.android.notifier.model.RetrofitUser;
+
+import java.util.List;
 
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -45,6 +48,14 @@ public class NotifierService {
             Callback<RetrofitUser> callback
         );
 
+        @FormUrlEncoded
+        @POST("/apiNotifier.php")
+        public void notifications(
+            @Field("metodo") String metodo,
+            @Field("idUser") int userId,
+            Callback<List<RetrofitNotification>> callback
+        );
+
     }
 
     public void login(RetrofitUser user, Callback<RetrofitUser> callback) {
@@ -53,6 +64,10 @@ public class NotifierService {
 
     public void signup(RetrofitUser user, Callback<RetrofitUser> callback) {
         mRestAdapter.signup("signup", user.getNombre(), user.getCelular(), user.getEmail(), user.getPassword(), callback);
+    }
+
+    public void notifications(int userId, Callback<List<RetrofitNotification>> callback) {
+        mRestAdapter.notifications("notificaciones", userId,callback);
     }
 
 }

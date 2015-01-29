@@ -96,7 +96,7 @@ public class SignUpActivity extends Activity {
                         NotifierApplication.updateParseInstallation(user);
                         PrefUtils.markLoginDone(SignUpActivity.this, user);
 
-                        Intent intent = new Intent(SignUpActivity.this, BrowseNotificationsActivity.class);
+                        Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                         intent.setFlags(IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);

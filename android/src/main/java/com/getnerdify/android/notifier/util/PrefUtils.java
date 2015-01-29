@@ -13,6 +13,9 @@ public class PrefUtils {
     /** Boolean indicating is the user is log in */
     public static final String PREF_LOGIN_DONE = "pref_login_done";
 
+    /** Integer reference the user id */
+    public static final String PREF_USER_ID = "pref_user_id";
+
     /** String reference the user email */
     public static final String PREF_USER_EMAIL = "pref_user_email";
 
@@ -25,6 +28,7 @@ public class PrefUtils {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(context);
         sp.edit()
             .putBoolean(PREF_LOGIN_DONE, true)
+            .putInt(PREF_USER_ID, user.getId())
             .putString(PREF_USER_EMAIL, user.getEmail())
             .apply();
     }
