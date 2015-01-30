@@ -62,8 +62,11 @@
     <!-- Message shown in dialog when user could not be logged in -->
     <string name="signup_failed_text">Revisar campos</string>
 
-    <!-- Label for BrowseEvents activity -->
+    <!-- Label for Browse Notifications activity -->
     <string name="title_explore">Notificaciones</string>
+
+    <!-- Label for Notification Detail activity -->
+    <string name="title_notification_details">Detalle</string>
 
     <!-- Label for Code activity -->
     <string name="title_code">Código</string>

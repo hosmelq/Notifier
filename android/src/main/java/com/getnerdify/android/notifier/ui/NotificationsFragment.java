@@ -40,7 +40,7 @@ public class NotificationsFragment extends Fragment implements CollectionViewCal
     private static final int GROUP_ID_NORMAL = 123;
 
     public interface Callbacks {
-        public void onNotificationSelected(String notificationId);
+        public void onNotificationSelected(RetrofitNotification notificationId);
     }
 
     @Override
@@ -104,12 +104,13 @@ public class NotificationsFragment extends Fragment implements CollectionViewCal
 
     @Override
     public void bindCollectionItemView(Context context, View view, int groupId, int indexInGroup, int dataIndex, Object tag) {
-        RetrofitNotification notification = mCursor.get(dataIndex);
+        final RetrofitNotification notification = mCursor.get(dataIndex);
 
         if (notification == null) {
             return;
         }
 
+        View targetView = view.findViewById(R.id.notification_target);
         TextView titleView = (TextView) view.findViewById(R.id.notification_title);
         TextView descriptionView = (TextView) view.findViewById(R.id.notification_description);
         TextView dateView = (TextView) view.findViewById(R.id.notification_date);
@@ -128,6 +129,13 @@ public class NotificationsFragment extends Fragment implements CollectionViewCal
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        targetView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCallbacks.onNotificationSelected(notification);
+            }
+        });
     }
 
     public void setContentTopClearance(int topClearance) {

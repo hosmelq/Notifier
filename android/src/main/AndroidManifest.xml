@@ -24,7 +24,7 @@
         <activity
             android:name=".ui.WelcomeActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.Notifier.Welcome">
+            android:theme="@style/Theme.Notifier.Welcome" >
         </activity>
         <activity
             android:name=".ui.SignUpActivity"
@@ -48,17 +48,29 @@
             </intent-filter>
         </activity>
         <activity
+            android:label="@string/title_notification_details"
+            android:name=".ui.NotificationDetailsActivity"
+            android:parentActivityName=".ui.BrowseNotificationsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Notifier.Notification" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.BrowseNotificationsActivity" />
+        </activity>
+        <activity
             android:label="@string/title_code"
             android:name=".ui.CodeActivity"
-            android:screenOrientation="portrait"
             android:parentActivityName=".ui.BrowseNotificationsActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Notifier.Code" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ui.BrowseNotificationsActivity" />
         </activity>
 
-        <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/ic_stat_ic_launcher"/>
+        <meta-data
+            android:name="com.parse.push.notification_icon"
+            android:resource="@drawable/ic_stat_ic_launcher" />
 
         <service android:name="com.parse.PushService" />
 

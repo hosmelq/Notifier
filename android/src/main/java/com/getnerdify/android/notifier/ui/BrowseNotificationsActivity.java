@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.getnerdify.android.notifier.R;
+import com.getnerdify.android.notifier.model.RetrofitNotification;
 import com.getnerdify.android.notifier.util.PrefUtils;
 import com.getnerdify.android.notifier.util.UIUtils;
 
@@ -58,8 +59,9 @@ public class BrowseNotificationsActivity extends BaseActivity
     }
 
     @Override
-    public void onNotificationSelected(String notificationId) {
-        Intent intent = new Intent(this, CodeActivity.class);
+    public void onNotificationSelected(RetrofitNotification notificationId) {
+        Intent intent = new Intent(this, NotificationDetailsActivity.class);
+        intent.putExtra("notification", notificationId);
         startActivity(intent);
     }
 

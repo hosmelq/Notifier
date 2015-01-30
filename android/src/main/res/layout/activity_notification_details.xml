@@ -1,0 +1,49 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.NotificationDetailsActivity">
+
+    <LinearLayout
+        android:background="@color/theme_primary"
+        android:elevation="@dimen/headerbar_elevation"
+        android:id="@+id/header_notification"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="16dp" >
+
+        <include layout="@layout/toolbar_actionbar" />
+
+        <TextView
+            android:ellipsize="end"
+            android:id="@+id/notification_title"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/content_padding_normal"
+            android:layout_marginStart="@dimen/content_padding_normal"
+            android:layout_width="match_parent"
+            android:lineSpacingMultiplier="1.1"
+            android:maxLines="4"
+            android:textColor="@color/body_text_1_inverse"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_large" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/content_padding_normal"
+        android:paddingRight="@dimen/content_padding_normal"
+        android:paddingTop="@dimen/content_padding_normal" >
+
+        <TextView
+            android:id="@+id/notification_message"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>
